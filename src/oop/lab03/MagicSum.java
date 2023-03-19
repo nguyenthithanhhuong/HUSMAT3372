@@ -12,7 +12,7 @@ public class MagicSum {
         int sum = 0;
 
         while (num != SENTINEL) {
-            if (hasEight(num) == true) {
+            if (hasEight(num)) {
                 sum += num;
             }
             System.out.print("Enter a positive integer (or -1 to end): ");
@@ -24,15 +24,11 @@ public class MagicSum {
     public static boolean hasEight(int num) {
         String str = String.valueOf(num);
         int strLen = str.length();
-        int count = 0;
         for (int i = 0; i < strLen; i++) {
             if (str.charAt(i) == '8') {
-                count++;
+                return true;
             }
         }
-        if (count == 0) {
-            return false;
-        }
-        return true;
+        return false;
     }
 }

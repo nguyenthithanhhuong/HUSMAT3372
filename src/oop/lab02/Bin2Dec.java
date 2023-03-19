@@ -9,10 +9,10 @@ public class Bin2Dec {
         String inStr = sc.nextLine();
         sc.close();
 
-        if (checkBin(inStr) == false) {
+        if (!checkBin(inStr)) {
             System.out.printf("error: invalid binary string \"%s\"", inStr);
         } else {
-            bin2Dec(inStr);
+            System.out.printf("The equivalent decimal number for binary \"%s\" is: %d", inStr, bin2Dec(inStr));
         }
     }
 
@@ -21,21 +21,18 @@ public class Bin2Dec {
         int result = 0;
         for (int charIdx = strLen - 1; charIdx >= 0; charIdx--) {
             int temp = str.charAt(charIdx) - '0';
-            result += temp*Math.pow(2, (strLen - charIdx));
+            result += temp*Math.pow(2, (strLen - charIdx - 1));
         }
         return result;
     }
 
     public static boolean checkBin(String str) {
         int strLen = str.length();
-        boolean result = true;
         for (int charIdx = strLen - 1; charIdx >= 0; charIdx--) {
-            if (str.charAt(charIdx) == 0 || str.charAt(charIdx) == 1) {
-                result = true;
-            } else {
-                result = false;
+            if (!(str.charAt(charIdx) == '0' || str.charAt(charIdx) == '1')) {
+                return false;
             }
         }
-        return result;
+        return true;
     }
 }

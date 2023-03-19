@@ -25,22 +25,15 @@ public class Equals {
     public static boolean equals(int[] array1, int[] array2) {
         int arrLen1 = array1.length;
         int arrLen2 = array2.length;
-        boolean result = true;
-        int count = 0;
         if (arrLen1 != arrLen2) {
-            result = false;
+            return false;
         } else {
             for (int i = 0; i < arrLen1; i++) {
                 if (array1[i] != array2[i]) {
-                    count++;
+                    return false;
                 }
             }
         }
-        if (count == 0) {
-            result = true;
-        } else {
-            result = false;
-        }
-        return result;
+        return true;
     }
 }

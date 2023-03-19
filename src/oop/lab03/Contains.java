@@ -18,14 +18,10 @@ public class Contains {
         System.out.print(contains(arr, key));
     }
     public static boolean contains(int[] array, int key) {
-        int count = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] == key) {
-                count++;
+                return true;
             }
-        }
-        if (count != 0) {
-            return true;
         }
         return false;
     }

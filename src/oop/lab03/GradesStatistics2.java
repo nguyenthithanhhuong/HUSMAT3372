@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class GradesStatistics2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter the nunber of students: ");
+        System.out.print("Enter the number of students: ");
         int numStudents = sc.nextInt();
         int[] grades = new int[numStudents];
         if (grades.length > 0) {
@@ -17,7 +17,7 @@ public class GradesStatistics2 {
         System.out.print("The grades are: ");
         print(grades);
         System.out.println();
-        if (checkArr(grades) == true) {
+        if (checkArr(grades)) {
             System.out.printf("The average is: %.2f\n", average(grades));
             System.out.printf("The median is: %.2f\n", median(grades));
             System.out.printf("The minimum is: %d\n", min(grades));
@@ -90,18 +90,12 @@ public class GradesStatistics2 {
     }
 
     public static boolean checkArr(int[] arr) {
-        int count = 0;
         boolean result = true;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] < 0 || arr[i] > 100) {
-                count++;
+                return false;
             }
         }
-        if (count == 0) {
-            result = true;
-        } else {
-            result = false;
-        }
-        return result;
+        return true;
     }
 }
