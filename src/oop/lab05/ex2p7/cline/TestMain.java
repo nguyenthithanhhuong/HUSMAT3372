@@ -1,4 +1,6 @@
-package oop.lab05.ex2p7.service;
+package oop.lab05.ex2p7.cline;
+
+import oop.lab05.ex2p7.service.MyLine;
 
 public class TestMain {
     public static void main(String[] args) {

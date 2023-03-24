@@ -1,6 +1,7 @@
-package oop.lab05.ex2p9.service;
+package oop.lab05.ex2p9.cline;
 
 import oop.lab05.ex2p8.service.MyCircle;
+import oop.lab05.ex2p9.service.MyPoint;
 import oop.lab05.ex2p9.service.MyTriangle;
 
 public class TestMain {
