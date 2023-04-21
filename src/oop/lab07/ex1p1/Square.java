@@ -1,4 +1,4 @@
-package oop.lab06.ex1p4;
+package oop.lab07.ex1p1;
 
 public class Square extends Rectangle {
     public Square() {
@@ -39,4 +39,5 @@ public class Square extends Rectangle {
                 + ",length=" + super.getLength()
                 + "]";
     }
+
 }

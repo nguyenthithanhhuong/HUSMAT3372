@@ -12,17 +12,24 @@ public class HillPattern {
         HillPatternA(size);
         System.out.println();
         HillPatternB(size);
+        System.out.println();
+        HillPatternC(size);
     }
 
     public static void HillPatternA(int size) {
-        int numRows = size;
-        int numCol = 2*numRows - 1;
-        for (int row = 1; row <= numRows; row++) {
-            for (int col = 1; col <= numCol; col++) {
-                if ((row + col >= numRows + 1) && (row >= col - numRows + 1)) {
-                    System.out.print("#");
+        for (int row = 1; row <= size; row++) {
+            for (int col = 1; col <= size; col++) {
+                if (row + col >= size + 1) {
+                    System.out.print("# ");
                 } else {
-                    System.out.print(" ");
+                    System.out.print("  ");
+                }
+            }
+            for (int col = 2; col <= size; col++) {
+                if (row >= col) {
+                    System.out.print("# ");
+                } else {
+                    System.out.print("  ");
                 }
             }
             System.out.println();
@@ -30,30 +37,38 @@ public class HillPattern {
     }
 
     public static void HillPatternB(int size) {
-        for (int row = 1; row <= size; row++) {
-            for (int col = 1; col < row; col++) {
-                System.out.print(" ");
+        for (int row = 0; row < size; row++) {
+            for (int col = 0; col < row; col++) {
+                System.out.print("  ");
             }
-            for (int col = row; col <= 2*size - 1; col++) {
-                System.out.print("#");
+            for (int col = row; col < size; col++) {
+                System.out.print("# ");
+            }
+            for (int col = row; col < size - 1; col++) {
+                System.out.print("# ");
             }
             System.out.println();
         }
     }
 
     public static void HillPatternC(int size) {
-        for (int row = 1; row <= size; row++) {
+        for (int row = 1; row < size; row++) {
             for (int col = 1; col <= size; col++) {
-
+                if (row + col >= size + 1) {
+                    System.out.print("# ");
+                } else {
+                    System.out.print("  ");
+                }
             }
-        }
-    }
-
-    public static void HillPatternD(int size) {
-        for (int row = 1; row <= size; row++) {
-            for (int col = 1; col <= size; col++) {
-
+            for (int col = 2; col <= size; col++) {
+                if (row >= col) {
+                    System.out.print("# ");
+                } else {
+                    System.out.print("  ");
+                }
             }
+            System.out.println();
         }
+        HillPatternB(size);
     }
 }
