@@ -3,7 +3,7 @@ package oop.lab09.ex2p3;
 public class ArrayPoly extends AbstractPoly {
     private final double[] coefficients;
 
-    public AbstractPoly(double[] coefficients) {
+    public ArrayPoly(double[] coefficients) {
         super();
         this.coefficients = coefficients;
     }
